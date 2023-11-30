@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="rainwater,rainwater harvesting,harvesting,rain,water rain,water,water harvesting,rain harvesting,rain harvest,water,life">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainwater Harvesting</title>
+    <link href='https://fonts.googleapis.com/css2?family=Alice' rel='stylesheet'>
+
+  <style>
+  body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-image: url(https://drive.google.com/uc?export=view&id=1-wkVHyi_rf4KWlSJGivGXEoSoytJnLJE);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  
+  /* Header styles */
+  .hero-image {
+    background-image: url(https://drive.google.com/uc?export=view&id=1u_jH5fFGmsu0PW4KJnojtxffsI1xZtil);
+    background-size:cover;
+    height: 300px;
+  }
+
+
+  .hero-text {
+    text-align: center;
+    padding: 100px 0;
+    color: #fff;
+  }
+  
+  .logo{
+    text-align: center;
+    padding: 100px,0;
+    color:#fff;
+    font-size: 2px;
+    font-family: "Alice";
+
+  }
+  .heroheading {
+    font-size: 36px;
+    letter-spacing: 10px;
+  }
+  
+  .herotext {
+    font-size: 18px;
+    font-family: 'Alice'; 
+    letter-spacing: 9px;
+  }
+
+
+  /* Navigation styles */
+  ul[class="dl"]{
+    list-style: none;
+    text-align:center;
+    background-color: skyblue;
+  }
+  
+  li {
+    display: inline;
+    margin: 0 20px;
+  }
+  
+  button {
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    text-align:end;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    background-color: skyblue;
+  }
+  
+  /* Main content styles */
+  main {
+    max-width: 1100px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  /* Images */
+  .i1, .i2, .i3,.i4,.i5,.i6,.i7,.i8,.i9 {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+  }
+  
+  /* Lists */
+  ul, ol {
+    padding-left: 20px;
+  }
+  
+  ol {
+    list-style: decimal;
+  }
+  
+  /* Miscellaneous */
+  figure {
+    text-align: center;
+  }
+  
+  figcaption {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* Make buttons hover effect */
+  button:hover {
+    background-color: #022e68;
+  }
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.popup{
+  display: none;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:380px;
+  padding: 20px 30px;
+  background: #fff;
+  box-shadow:2px 2px 5px 5px;
+  border-radius:10px;
+  transition: top 0ms ease-in-out 200ms,
+              opacity 200ms ease-in-out 0ms,
+              transform 20ms ease-in-out 0ms;
+}
+
+.popup.active{
+  top: 50%;
+  opacity: 1;
+  transform: translate(-50%,-50%) scale(1);
+  transition: top 0ms ease-in-out 200ms,
+              opacity 200ms ease-in-out 0ms,
+              transform 20ms ease-in-out 0ms;
+}
+
+.popup .close-btn{
+  position:absolute;
+  top:10px;
+  right:10px;
+  width:15px;
+  height:15px;
+  background:#888;
+  color:#eee;
+  text-align:center;
+  line-height: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.popup .form h2{
+  text-align: center;
+  color: #222;
+  margin: 10px 0px 20px;
+  font-size: 25px;
+}
+
+.popup .form .form-element{
+  margin: 15px 0px;
+}
+
+.popup .form .form-element label{
+  font-size: 14px;
+  color: #222;
+}
+
+.popup .form .form-element input[type="text"],.popup .form .form-element input[type="email"],.popup .form .form-element input[type="text-area"]{
+  margin-top: 5px;
+  display:block;
+  width:100%;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.popup .form .form-element input[type="submit"]{
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: #222;
+  color:#f5f5f5;
+  border-radius: 10px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.social-links li {
+  margin: 0 10px;
+}
+
+.feedback-section {
+  margin-top: 20px;
+}
+
+/* Customize the appearance of social icons as needed */
+.social-links img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Customize the appearance of feedback form as needed */
+.feedback-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedback-form input,
+.feedback-form textarea,
+.feedback-form button {
+  margin: 5px;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+    <div class="hero-image">
+    <div class="logo"><p class="herotext">AquaHarvestHub</p></div><br>
+    <div class="hero-text">
+        <h1 class="heroheading">Rainwater Harvesting</h1><br>
+        <p class="herotext">- A Drop Harvested Is A Crop Harvested -</p>
+    </div>
+    </div>
+    <ul class="dl">
+        <li><button onclick="location.href='#home'">Home</button></li>
+        <li><button onclick="location.href='#case-study'">Case Study</button></li>
+        <li><button onclick="openContactForm()" class="center">Contact Us</button></li>
+        <!--POP UP CONTACT US FORM-->
+        <div id="contactPopup" class="popup">
+            <div class="popup-content">
+              <span class="close-btn" onclick="closeContactForm()">&times;</span>
+              <form>
+                <h2>Contact Us</h2>
+                <div class="form-element">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter Name" required><br><br>
+                </div>
+
+                <div class="form-container">
+                <label for="email" >Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter email" required><br><br>
+                </div>
+
+                <div class="form-element">
+                <label for="message">Message</label>
+                <textarea id="message" n ame="message" placeholder="Enter your Message" required></textarea><br><br>
+                </div>
+                 
+                <div class="form-element">
+                <input type="submit" value="Submit">
+                </div>
+
+              </form>
+            </div>
+          </div>
+          
+          <script>
+          function openContactForm() {
+            document.getElementById("contactPopup").style.display = "block";
+          }
+          
+          function closeContactForm() {
+            document.getElementById("contactPopup").style.display = "none";
+          }
+          </script>
+          
+        <li><button onclick="openfeedForm()" class="center">Testimonials</button></li>
+
+         <!--POP UP FEEDBACK FORM-->
+         <div id="feedPopup" class="popup">
+            <div class="feed-content">
+              <span class="close-btn" onclick="closefeedForm()">&times;</span>
+              <form>
+                <h2>Feedback</h2>
+                <div class="form-element">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter Name" required><br><br>
+                </div>
+
+                <div class="form-container">
+                <label for="email" >Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter email" required><br><br>
+                </div>
+
+                <div class="form-element">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Enter your Message" required></textarea><br><br>
+                </div>
+                 
+                <div class="form-element">
+                <input type="submit" value="Submit">
+                </div>
+
+              </form>
+            </div>
+          </div>
+          
+          <script>
+          function openfeedForm() {
+            document.getElementById("feedPopup").style.display = "block";
+          }
+          
+          function closefeedForm() {
+            document.getElementById("feedPopup").style.display = "none";
+          }
+          </script>
+
+    </ul>
+    <main id="home">
+        <p>Rainwater harvesting is a sustainable and eco-friendly practice that involves collecting and storing rainwater for various uses, such as irrigation, domestic water supply, and groundwater recharge. 
+            This comprehensive guide will explore the various aspects of rainwater harvesting, its benefits, methods, and the significance of this practice.</p><br>
+        <h2>What is Rainwater Harvesting?</h2>
+        <figure>
+            <img src="https://drive.google.com/uc?export=view&id=1bVBfAC-o3-mNEThmvqjlHUYaOECqJvvV" class="i1">
+            <figcaption>Fig 1: Rainwater Harvesting</figcaption>
+        </figure>
+        <p>Rainwater harvesting in its simple term is just collecting the rain water where it falls. 
+            It may mainly be, roof top harvesting and open space harvesting. Further after harvest, it may either be directly used performing filtration or used for groundwater recharge.
+            An average of 8% of the total rainfall recharges the ground water aquifers and most of the rainfall goes waste through surface run-off into streams and rivers and finally into sea.
+             The technique of rainwater harvesting involves catching the rain from localized catchment surfaces such as roof of a house, plain and sloping ground surface etc.
+             <br> <br>The rainwater that falls on these catchment is diverted into dugout ponds, vessels or underground tanks to store for long periods. Construction of small barriers across small streams to check and
+             store the running water is also an example ofsmall catchment water harvesting.
+            Decentralized rain water harvesting is an environmental friendly viable option in areas where good fresh quallty fresh  water  or groundwater  is  lacking  or available in
+            insufficient quantities.
+            </p><br>
+        <h2>Need for Rainwater Harvesting</h2>
+        <p>Demand for fresh water is ever increasing while the potential sources remains the same. Rainwater is the primary source of water asthe rainis the first form ofwater In the hydrological cycle.  Rivers,lakes and ground water
+            are all secondary sources of water and currently they meet 70 to 80 % of our water needs. It is forgotten,that rain Is the ultimate source that feeds all these secondary sources and remains ignorant of its value. 
+            The potential of rain to meet water demand is tremendous. Unless people are involved in conserving rain water from individual households to big industries/institutions,it would be very difficultto meet the loomingwater crisis.
+            <br><br>Water is a necessary resource for all life on our planet. It is a major component of the hydrosphere and makes up more than two-thirds of the Earth’s surface. Water plays a vital role in the environment by moderating temperature,
+             participating in the water cycle, and dissolving and transporting minerals and nutrients. The Earth’s water is renewable, but it is not always available in the right quantity or of the right quality for human needs. Many factors, 
+             such as climate change, population growth, and economic development, can impact the availability of water resources. One way to address these issues is through rainwater harvesting (RWH). RWH is the practice of collecting, storing,
+              and using rainwater for different purposes. It is an ancient practice that has been used for centuries to supplement water needs in dry areas. Harvesting rainwater will help to reduce dependence on municipal water supplies, it helps to save money, and it helps to conserve water. 
+              Despite these benefits, rainwater harvesting is not widely practiced. This is due in part to a lack of awareness of the benefits of rainwater harvesting. It is also due to the fact that many people believe that rainwater harvesting is a difficult and complicated process. But in reality, harvesting rainwater is a very simple process.
+        </p><br>
+        <h2>Benefits of Rainwater Harvesting</h2>
+        <figure>
+            <img src="https://drive.google.com/uc?export=view&id=17oReq-jwMhsbuALfIEm2qpgZvh6FHUA3" class="i2">
+            <figcaption>Fig 2: Some Benefits of Rainwater Harvesting</figcaption>
+        </figure>
+        <p>Rainwater harvesting offers a multitude of benefits across various aspects of our lives and the environment. Here are some key advantages</p>
+        <ol>
+        <li><h3>Water Conservation</h3></li>
+            <p>Rainwater harvesting helps in conserving precious water resources. By capturing rainwater that would otherwise run off and be lost, we reduce our dependency on groundwater and surface water reservoirs. 
+                This contributes to water conservation, particularly important in arid and water-scarce regions.</p>
+        <li><h3>Reduced Utility Costs</h3></li>
+            <p>One of the most immediate and tangible benefits is a reduction in utility costs. By using harvested rainwater for purposes like landscaping irrigation, toilet flushing, and laundry, households can significantly lower their water bills. 
+                This is particularly relevant in areas where water is expensive.</p>
+        <li><h3>Environmental Benefits</h3></li>
+                <ul>
+                <li><b>Reduced Erosion:</b> Rainwater harvesting can prevent soil erosion and flooding by capturing the excess water that would otherwise run off quickly, carrying soil with it. 
+                    This mitigates damage to landscapes and reduces sedimentation in rivers and lakes.</li><br>
+                <li><b>Groundwater Recharge:</b> When rainwater is allowed to infiltrate into the ground, it recharges aquifers, which are essential sources of freshwater. 
+                    By replenishing these underground reservoirs, we ensure a more sustainable supply of water in the long term.</li><br>
+                <li><b>Conservation of Surface Water:</b> Capturing and using rainwater decreases the demand on surface water reservoirs and rivers, preserving these ecosystems and ensuring their long-term health.
+                </li>
+                </ul>
+        <li><h3>Social and Economic Benefits</h3></li>
+                <ul>
+                <li><b>Water Security:</b> Rainwater harvesting provides a source of water during water shortages and droughts, ensuring a level of water security for households and communities.</li>
+                <br><li><b>Job Creation:</b> The implementation and maintenance of rainwater harvesting systems can create job opportunities in various areas, from system installation to maintenance and education.</li>
+                <br><li><b>Community Engagement:</b> Rainwater harvesting fosters community involvement and cooperation, as neighborhoods may collaborate on large-scale systems, and educational programs 
+                    can be developed to promote sustainable water practices.</li>
+                </ul>
+        <li><h3>Improved Water Quality</h3></li>
+            <p> Rainwater, when collected and stored properly, tends to be of higher quality than water from other sources. It is free from many of the chemicals used in municipal water treatment,
+                 and if appropriately filtered and treated, it can be used for a wide range of purposes, including drinking.</p>
+        <li><h3>Reduced Energy Consumption</h3></li>
+            <p>Unlike centralized water supply systems, which require significant energy for treatment and distribution, rainwater harvesting systems are energy-efficient. 
+                The reduced need for pumping and treatment contributes to lower greenhouse gas emissions.</p>
+        <li><h3>Sustainable Landscaping</h3></li>
+            <p> The use of harvested rainwater for landscaping supports the growth of drought-resistant plants. 
+                This not only conserves water but also promotes biodiversity and enhances the beauty of outdoor spaces.</p>
+        <li><h3>Resilience to Climate Change</h3></li>
+            <p>As climate change leads to more extreme weather patterns, including extended droughts and heavy rainfall, rainwater harvesting can provide resilience by allowing the capture and use of water when it is most needed.</p>
+        </ol><br>
+            <h2>Components of a Rainwater Harvesting System</h2>
+        <p>A comprehensive rainwater harvesting system typically consists of the following components:</p>
+        <p><b>Catchment Area:</b> The catchment area is the surface on which rainwater falls and is collected. 
+            This can include rooftops, paved surfaces, or any other impermeable area designed to direct rainwater into the system.</p>
+        <p><b>Conveyance System:</b> The conveyance system includes gutters, downspouts, and pipes that direct rainwater from the catchment area to the storage or collection point.
+             Proper design and maintenance of this system are essential to ensure efficient water flow.</p>
+        <p><b>Filtration System:</b> Rainwater is often contaminated with debris, leaves, bird droppings, and other impurities. A filtration system, typically consisting of screens, 
+            filters, or mesh, helps to remove these contaminants and ensure that the collected water is of good quality.</p>
+        <p><b>Storage Tanks:</b> Rainwater is stored in tanks or reservoirs for later use. The choice of tank size depends on factors such as the demand for water, the frequency of rainfall, and the size of the catchment area. 
+            Tanks can be above ground or underground, made of various materials like concrete, plastic, or metal.</p>
+        <p><b>First Flush Diversion:</b> This is a mechanism that diverts the initial rainwater, which may be dirtier due to accumulated contaminants on the catchment surface, away from the storage tank. 
+            This ensures that the stored rainwater is cleaner and of better quality.</p>
+        <p><b>Distribution System:</b> The distribution system is responsible for transporting the harvested rainwater to where it is needed. 
+            It may include a network of pipes and pumps to deliver water to various end-use points, such as irrigation, toilets, or household faucets.</p>
+        <p><b>Treatment and Disinfection:</b> Depending on the intended use, harvested rainwater may require additional treatment, 
+            such as disinfection with chlorine or ultraviolet (UV) light, to ensure that it is safe for consumption or other purposes.</p>
+        <h2>Process of Rainwater Harvesting</h2>
+        <p>The process of rainwater harvesting involves several key steps:</p>
+        <p><b>Collection:</b> Rainwater falls onto the catchment area, typically a rooftop or other impervious surface.
+             Gutters and downspouts channel the rainwater to a central collection point.</p>
+        <p><b>Filtration:</b> As the rainwater flows through the conveyance system, it passes through filters and mesh screens to remove larger debris and contaminants.
+             This step ensures that the collected water is of higher quality.</p>
+        <p><b>First Flush Diversion:</b> A first flush diversion system redirects the initial runoff, which may contain the most pollutants, away from the storage tank.
+             This helps in ensuring that only cleaner water enters the storage system.</p>
+        <p><b>Storage:</b> The rainwater is directed into storage tanks or reservoirs. The stored water can be used for various purposes, 
+            including irrigation, domestic use, or industrial processes.</p>
+        <p><b>Distribution:</b> When needed, the harvested rainwater is pumped or gravity-fed from the storage tank through a distribution system to the intended use points. 
+            This may include irrigation systems, household plumbing, or industrial processes.</p>
+        <p><b>Treatment (if necessary):</b> Depending on the water quality requirements, additional treatment such as chlorination or UV disinfection may be applied before the 
+            harvested rainwater is used for drinking or other high-quality applications.</p><br>
+
+        <h2>Parameters to be considered in Rainwater Harvesting</h2>
+        <p>One who wish to do rain water harvesting must take into considerationthe following critical parameters.</p>
+            <h3>Mean Annual Rainfalland Rainfall Pattern</h3>
+           <p> The Quantity of rainfall received during a year (mm/year) and its distribution over the year (rainfall pattern) must be considered while devising a rainwater harvesting system. 
+            Generally the mean annual rainfall (generally it Is a statistical average of rainfall over 30 year's period) is used for rainwater harvesting calculations.
+            </p>
+            <h3>Run-off coefficient or Collection Coefficient</h3>
+            <p>Run-off is the water that flows away from a catchment after falling on its surface in the form of rain. Runoff depends upon the area and type of the catchment over which it falls as well as surface features. 
+                For example, normal concrete roof has highest run off value than the area with  heavy vegetation.
+                	The amount of rainfall contributing to the runoff of a given area must be known for runoff estimation. 
+                    The runoff coefficient (C) is the value that represents the ratio of runoff to rainfall. Runoff coefficients for  some types of catchments are presented in Fig:3
+            </p>
+            <figure>
+                <img src="https://drive.google.com/uc?export=view&id=19KzTschbRBo1wujWZBLeOLUPbqaXYvl2" class="i3">
+                <figcaption>Fig 3: Run-off coefficients for differnt catchments</figcaption>
+            </figure>
+            <p>The quantity of rain water harvested can be calculated usingthefollowing formula <b>Q= A * C* P* 1000</b><br>
+                Where, <br><b>Q</b> is the quantity of rainwater harvested in litres,<br> <b>A</b>	- Area in sq.meter, and<br>
+                <b>C</b> -  The run off coefficient (decide the run off coefficient according to the type of roof from the Fig:3)<br>
+                <b>P</b>	- Meanannual rainfall<br>
+                <b>1000</b> - Conversion factor to convert into litres
+                </p><br>
+            
+        <h2 id="case-study">Case Studies</h2>
+        <ol>
+        <li><h3>Singapore - Marina Barrage</h3></li>
+        <figure>
+            <img src="https://drive.google.com/uc?export=view&id=1ib0DQrwZV5Swaj5SX41SErKpXjWY2_DL" class="i4">
+            <figcaption>Fig 4: Singapore - Marina Barrage</figcaption>
+        </figure>
+        <p>Singapore's Marina Barrage is an innovative engineering marvel that serves multiple purposes, one of which is rainwater harvesting. The Marina Barrage is essentially a dam built at the confluence of five rivers, creating a reservoir called the Marina Reservoir. 
+            Its primary function is to alleviate flooding in low-lying areas, provide a freshwater source, and serve as a lifestyle attraction for Singaporeans. 
+            Rainwater harvesting is a crucial aspect of its design and sustainability.<br>The rainwater harvesting system at Marina Barrage contributes to Singapore's water sustainability by reducing reliance on imported water sources. 
+            The collected rainwater is used for non-potable purposes, such as landscape irrigation, recreational activities like boating, and maintaining the reservoir's water levels.<br>
+            Additionally, Marina Barrage serves as a platform for public education and awareness about water conservation, sustainable practices, and the importance of environmental stewardship. 
+            Visitors can learn about the significance of rainwater harvesting, water management, and the impact of such initiatives on a national and global scale.<br>
+            Overall, Marina Barrage's rainwater harvesting system showcases Singapore's commitment to sustainable urban development and serves as an example of innovative water management strategies that can be implemented in other urban areas facing similar challenges.</p>
+        <li><h3>India - Rajasthan's Traditional Water Harvesting Systems</h3></li>
+        <figure>
+            <img src="https://drive.google.com/uc?export=view&id=1WsSWvQJkbRCZ7wjL8Hpd5s7GbZGQ-w2s" class="i5">
+            <figcaption>Fig 5: India - Rajasthan's Traditional Water Harvesting Systems</figcaption>
+        </figure>
+        <p>Rajasthan, a desert state in India, has a rich history of traditional rainwater harvesting techniques that have been developed and refined over centuries to cope with its arid climate. 
+            These techniques are ingeniously designed to capture and conserve precious rainwater for various uses, particularly for agricultural, domestic, and drinking purposes.Some of the traditional rainwater harvesting methods in Rajasthan include:</p>
+            <p><b>Taanka (Underground Tank):</b> Taankas are large, underground tanks that store rainwater. These structures are typically built using stone, brick, or cement. They have a conical shape with a narrow top and a wider bottom to maximize water collection. 
+                The rainwater collected from rooftops is directed through pipes or channels into these tanks, where it is stored and preserved for long periods.</p>
+            <p><b>Khadin System:</b> The khadin system is a traditional method for water conservation and agriculture. It involves the construction of embankments in sloping terrains to capture rainwater and prevent soil erosion. These embankments capture runoff water during the rainy season 
+                and store it in the fields for cultivation. The stored water helps in recharging the groundwater table and supports agriculture during dry periods.</p>
+            <p><b>Johad (Community Pond):</b> Johads are traditional community ponds built to collect and store rainwater. These ponds are typically located at the base of hills or in low-lying areas to capture rainwater runoff. Johads help in recharging groundwater, providing water for 
+                drinking and agricultural needs, and sustaining local ecosystems.</p>
+            <p><b>Bawari (Stepwell):</b> Bawaris are stepwells that were traditionally used to collect and store rainwater. These wells have steps leading down to the water level, allowing access for drawing water. Rainwater runoff from the surrounding area is channeled into the stepwell,
+                 which serves as a storage reservoir for the community.</p>
+            <p><b>Rooftop Rainwater Harvesting:</b> This method involves collecting rainwater from rooftops of houses or buildings. Gutters and pipes are used to direct the rainwater into storage tanks or reservoirs. In Rajasthan, this method is 
+                commonly used to capture and store rainwater for domestic purposes.</p>
+        <li><h3>United States - Seattle Public Utilities' RainWise Program</h3></li>
+        <figure>
+            <img src="https://drive.google.com/uc?export=view&id=1I83tnUMPpCsCn3ISi8PIwg2zwUfOjgPm" class="i6">
+            <figcaption>Fig 6: United States - Seattle Public Utilities' RainWise Program</figcaption>
+        </figure>
+        <p>The RainWise program by Seattle Public Utilities is an innovative initiative that
+             encourages and supports residents in managing stormwater on their properties.
+              The program aims to reduce stormwater runoff, which can contribute to pollution and overwhelm 
+              the city's sewer system during heavy rains. RainWise provides incentives to homeowners to install rain gardens and cisterns, thus mitigating stormwater issues.<br>
+              The RainWise program not only addresses stormwater challenges but also promotes community involvement in implementing sustainable and eco-friendly solutions. By incentivizing the installation of rain gardens and cisterns, 
+              Seattle Public Utilities empowers residents to actively contribute to the city's environmental health and resilience in managing stormwater runoff.</p>
+        <li><h3>Australia - Melbourne's Fed Square Green Roof</h3></li>
+        <figure>
+            <img src="https://drive.google.com/uc?export=view&id=1bOeU3raSbtK3V0RFZPS89IGWmQlUZAYZ" class="i7">
+            <figcaption>Fig 7: Australia - Melbourne's Fed Square Green Roof</figcaption>
+        </figure>
+        <p>Federation Square in Melbourne installed a green roof with extensive rainwater harvesting systems. The design includes vegetated areas that capture rainwater, reducing stormwater runoff and providing 
+            insulation to the building, thereby reducing energy costs.</p>
+        <li><h3>Kenya - The Great Lakes University of Kisumu</h3></li>
+        <figure>
+            <img src="https://drive.google.com/uc?export=view&id=1rpxrJfI-iU1_hvh7dQZIRVuz82mhr2BS" class="i8">
+            <figcaption>Fig 8: Kenya - The Great Lakes University of Kisumu</figcaption>
+        </figure>
+        <p>The university implemented a rainwater harvesting system to address water scarcity. They incorporated rooftop catchment systems to collect rainwater, which is then filtered and stored for various uses, 
+            including drinking, agriculture, and sanitation.</p>
+        <li><h3>Germany - Vauban Eco-District, Freiburg</h3></li>
+        <figure>
+            <img src="https://drive.google.com/uc?export=view&id=1Ta9mP_ArpMfZOJ1QSNzguTfVGSA8ovtR" class="i9">
+            <figcaption>Fig 9: Germany - Vauban Eco-District, Freiburg</figcaption>
+        </figure>
+        <p>Vauban is an eco-district in Freiburg known for its sustainable practices. It incorporates rain gardens, permeable surfaces, and rooftop gardens that collect rainwater. The harvested water is used for non-potable purposes, 
+            reducing demand on the city's water supply.</p>
+        </ol><br>
+
+        <h2>Conclusion</h2>
+        <p>In conclusion, embracing rainwater harvesting is not just a sustainable choice, but a transformative one for individuals, communities, and the planet as a whole. 
+            By harnessing the power of rain, we not only alleviate the strain on traditional water sources but also contribute to environmental conservation, reduce the carbon footprint, and build resilient communities. 
+            Through this simple yet profound practice, we can usher in a future where water scarcity becomes a thing of the past, and where every drop of rain becomes a source of life, nourishment, and sustainability. 
+            Together, let us embrace the potential of rainwater harvesting and pave the way for a greener, more water-secure world.</p>
+
+    </main>
+        <div style="text-align: center; background-color:aliceblue;">
+        <p>&copy; 2023 AquaHarvestHub. All rights reserved.</p>
+        </div>
+
+</body>
+</html>

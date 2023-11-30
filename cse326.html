@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <title>Campus Hub</title>
+
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins',sans-serif;
+        }
+        body,html{
+            overflow-x: hidden;
+        }
+        .hero{
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0, 0, 0, 0.3));
+            position:relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 5%;
+        }
+        nav{
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 20px 8%;
+            display: flex;
+            align-content: center;
+            justify-content: space-between;
+        }
+        nav ul li{
+            list-style: none;
+            display: inline-block ;
+            margin-left: 20px;
+        }
+        
+        nav .logo {
+            width: 80px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 17px;;
+            margin: 10px 20px;
+            position: relative;
+        }
+        nav ul li a::after {
+            content: '';
+            width:0;
+            height: 3px;
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            transition: 0.3s;
+        }
+        
+        nav ul li a:hover::after{
+            width: 50%;
+        }
+        .content{
+            text-align: center;
+        }
+        .content h1{
+            font-size: 160px;
+            color:transparent;
+            font-weight: 600;
+            transition: 0.5s;
+            -webkit-text-stroke: 2px #fff;
+            background: url(https://drive.google.com/uc?export=view&id=1Fhd35kyMq3Ol-wf2lp5HeBEMczuzO7RD);
+            -webkit-background-clip: text;
+            background-position: 0 0;
+            animation: back 20s linear infinite;
+        }
+        
+        @keyframes back{
+            100%{
+                background-position: 2000px 0;
+            }
+        }
+        /* .content h1:hover{
+            -webkit-text-stroke: 0.1px #fff;
+            color: transparent;
+        } */
+        .content a{
+            text-decoration: none;
+            display: inline-block;
+            color: #fff;
+            font-size: 24px;
+            border: 2px solid #fff;
+            padding: 14px 70px;
+            border-radius: 50px;
+            margin-top: 20px;
+        }
+        .back-video{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+        
+        @media(min-aspect-ratio:16/9){
+            .back-video{
+                width: 100%;
+                height: auto;
+            }
+        }
+        
+        @media(max-aspect-ratio:16/9){
+            .back-video{
+                width: auto;
+                height: 100%;
+            }
+        }
+        
+        
+        .act{
+            margin-top: 20px;
+            margin-bottom: 100px;
+            width: 120%;
+            position: relative;
+            transform: translate(-50%,-50%);
+        
+        }
+        section {
+            padding: 40px;
+        }
+        
+        #home,#calendar{    
+            background-color: #e6f7ff;
+        }
+        
+        section h2 {
+            color: #000;
+            text-align: center;
+            margin-top: auto;
+            font-family: 'Poppins',sans-serif;
+            font-size: 40px;
+            text-transform: uppercase;
+        }
+        
+        section p {
+            color: #666;
+        }
+        .main{
+            padding: 70px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+        }
+        
+        .profile-card{
+            position: relative;
+            width: 220px;
+            height: 220px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 50%;
+            box-shadow: -5px 8px 45px rgba(51,51,51,0.126);
+            transition: all .4s;
+            margin: 0 20px;
+        }
+        .profile-card:hover{
+            border-radius: 10px;
+            height: 260px;
+        }
+        .profile-card .banner{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .profile-card:hover img{
+            border-radius: 10px;
+            transform: translateY(-70px);
+         }
+         .banner img{
+            object-fit: fill;
+            width: 100%;
+            border-radius: 50%;
+            transition: all .4s;
+            z-index: 99;
+         }
+        
+        .caption {
+            text-align: center;
+            transform: translateY(-90px);
+            opacity: 0;
+            pointer-events: none;
+            transition: all .5s;
+        }
+        .profile-card:hover .caption {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .caption h3{
+            font-size: 21px;
+            font-weight: 600;
+            color: #000;
+        }
+        #line1,#line3{
+            width: 100px;
+            height: 4px;
+            background: #000;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+        #line2{
+            width: 100px;
+            height: 4px;
+            background: #fff;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+        #calendar{
+            width: 80%;
+            margin: 80px auto;
+        }
+        .row{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+        }
+        .row .col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+        .row .col .i1{
+            width: 60%;
+        }
+        .row .col .i2{
+            width: 80%;
+        }
+        .row .col .i3{
+            width: 60%;
+        }
+        .row .col .i4{
+            width: 80%;
+        }
+        .row .col .i5{
+            width: 70%;
+        }
+        .row .col .i6{
+            width: 70%;
+        }
+        .row .col .i7{
+            width: 60%;
+        }
+        .row .col .i8{
+            width: 80%;
+        }
+        .events .row{
+            margin-top: 50px;
+        }
+        h4{
+            font-size: 20px;
+            color:#484872;
+            margin: 20px auto;
+        }
+        .col p{
+            text-align: center;
+        }
+        .events .row .col p{
+            color: #484872;
+            padding: 0 40px;
+        }
+        .events .ctn{
+            margin-top: 30px;
+        }
+        .ctn{
+            padding: 8px 15px;
+            background: #000;
+            border-radius: 30px;
+            color: whitesmoke;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        </style>
+
+
+</head>
+<body>
+    <header>
+        <div class="hero">
+            
+            <video autoplay loop muted plays-inline class="back-video">
+                <source src="video (2160p).mp4">
+            </video>
+
+        <nav class="navbar">
+            <img src="https://drive.google.com/uc?export=view&id=1Jd4Vl13tMRJ2-wui7h3A2HkvmZkFk92B" class="logo">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#banner1">Campus Activities</a></li>
+                <li><a href="#banner2">Gallery</a></li>
+                <li><a href="#banner3">Event Calendar</a></li>
+                <li><a href="#contact">Contact US</a></li>
+           </ul>
+        </nav>
+        <div class="content">
+            <h1>Campus Hub</h1>
+            <a href="#home">Explore</a>
+        </div>
+        </div>
+    </header>
+
+<section id="home">
+<h2>Home</h2>
+<div id="line1"></div>
+
+<h3 style="text-align: center;margin-top: auto;font-family: 'Poppins',sans-serif;font-size: 18px;text-transform: uppercase;padding: 30px;">Welcome to Campus Hub!</h3>
+<p style="text-align: center;margin-top: auto;font-family: 'Poppins',sans-serif;font-size: 17px;padding: 20px;">Your premier destination for all things exciting and student-centric! Whether you're on the lookout for the coolest campus events, lively concerts, or engaging student activities, our carefully curated selection ensures there's something for every student. 
+    Stay in the loop with featured events, receive personalized recommendations tailored to your interests, and connect with a dynamic community of fellow students. Our user-friendly interface makes exploring and attending events a breeze. 
+    From study breaks to weekend adventures, we're your go-to source for diverse and unforgettable student experiences. 
+    Start your student journey with us, and let the excitement unfold where every event is an opportunity for a memorable student adventure!</p>
+</section>
+        <div style="background-color: #000;padding: 50px;"><h2 style="color: white;text-align: center;margin-top: auto;font-family: 'Poppins',sans-serif;font-size: 40px;text-transform: uppercase;" class="stuffs">Stuffs</h2>
+            <div id="line2"></div>
+        </div>
+
+            <div class="main">
+                <div class="profile-card">
+                    <div id="banner1" class="banner">
+                        <img src="https://imckrems.tsue.uz/wp-content/uploads/2018/08/austin-neill-247047-unsplash.jpg">
+                    </div>
+                    <div class="caption"><h3><a href="imageslider.html" target="_blank" style="text-decoration: none; color: #000;">Campus<br>Activities</a></h3></div>
+                </div>
+                <br>
+                <div class="profile-card">
+                    <div id="banner2" class="banner">
+                        <img src="https://www.rollingstone.com/wp-content/uploads/2022/08/What-Is-the-Future-of-Live-Music.jpg">
+                    </div>
+                    <div class="caption"><h3><a href="imagegallery.html" target="_blank" style="text-decoration: none; color: #000;">Gallery</a></h3></div>
+                </div>
+                <br>
+                <div class="profile-card">
+                    <div id="banner3" class="banner">
+                        <img src="https://thumbs.dreamstime.com/b/upcoming-events-vector-text-pop-style-typography-design-printed-poster-headline-website-banner-eps-upcoming-events-vector-134190977.jpg">
+                    </div>
+                    <div class="caption"><h3><a href="#calendar" style="text-decoration: none; color: #000;">Event<br>Calendar</a></h3></div>
+                </div>
+            </div>
+
+
+<section id="calendar" class="events">
+    <h2>upcoming events</h2>
+<div id="line3"></div>
+
+<h3 style="text-align: center;margin-top: auto;font-family: 'Poppins',sans-serif;font-size: 18px;text-transform: uppercase;padding: 30px;">Upcoming Events at Campus Hub</h3>
+<p style="text-align: center;margin-top: auto;font-family: 'Poppins',sans-serif;font-size: 17px;padding: 20px;">Get ready for an epic semester of student-centric fun and excitement! At Campus Hub, we're thrilled to present a lineup of upcoming events that cater to the diverse interests of our student community. 
+    From campus parties to academic workshops, there's something for everyone to enjoy. Stay in the know with our highlighted events, featuring the hottest happenings on and around your campus. Plus, our personalized recommendations ensure you never miss out on the events that align with your passions. 
+    Whether you're looking to unwind, learn something new, or simply connect with fellow students, our Upcoming Events section is your go-to resource. Mark your calendars, invite your friends, and make the most of your student experience with the exciting events coming your way. Your next unforgettable adventure starts here at Campus Hub—where student life takes center stage!
+</p>
+
+
+<div class="row">
+    <div class="col">
+        <img src="https://miro.medium.com/v2/resize:fit:1400/1*g3ARV1u4v9b9AKEIyPB7zw.jpeg" class="i1">
+        <h4>Hackathon | 23 Nov</h4>
+        <p>🚀 Get Ready, Coders! 🖥️ Exciting news—our next Hackathon is just around the corner! 
+            📅 Save the date for an epic coding showdown, where innovation meets collaboration. 
+            Sharpen your skills, join forces with fellow students, and tackle real-world challenges. 
+            🏆 Unleash your creativity and make a mark in the tech world. Stay tuned for registration details and gear up for a coding experience like no other! 🚨
+             #HackathonAlert #TechSavvyStudents #InnovationJourney 🚀</p>
+        <a href="#" class="ctn">Learn More</a>
+    </div>
+    <div class="col">
+        <img src="https://gadgetfreeks.com/wp-content/uploads/2022/05/istockphoto-1364827675-170667a.jpg" class="i2">
+        <h4>Sports Event | 25 Nov</h4>
+        <p>🏀 Score Big! 🏆 Attention, athletes! 📅 Our upcoming sports event is just days away. 
+            Lace up those sneakers, gather your team, and get ready to compete for glory. 
+            Whether you're a seasoned pro or just love the game, this is your chance to shine. Stay tuned for sign-up info, and let the games begin! 🎉
+             #GameOn #SportsFever #StudentAthletes 🏅</p>
+        <a href="#" class="ctn">Learn More</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <img src="https://awalls.org/wp-content/uploads/2020/12/singer-1024x669.jpg" class="i3">
+        <h4>Music Contest | 28 Nov</h4>
+        <p>🎤🎸 Music Makers Alert! 🚀 Get ready to hit the stage! 📅 Our upcoming music contest is around the corner. 
+            Tune those instruments, warm up those vocals, and prepare for a chance to showcase your talent. 
+            Stay tuned for entry details—it's your time to steal the spotlight! 🎶🌟
+             #MusicContest #StudentTalent #RockTheStage 🚀🎤</p>
+        <a href="#" class="ctn">Learn More</a>
+    </div>
+    <div class="col">
+        <img src="https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2022/12/30232040/live-concerts.jpeg" class="i4">
+        <h4>Live Concert | 3 Dec</h4>
+        <p>🎤🎉 Ready to Jam? 📅 Save the Date! 🚀 Our live concert is happening soon! 🎶 Get hyped for an unforgettable night of music, good vibes, and epic performances. 
+            Stay tuned for ticket info—don't miss out on the hottest event of the season! 🌟🕺
+             #LiveMusicThrills #StudentConcert #GetYourGrooveOn 🎤🎉</p>
+        <a href="#" class="ctn">Learn More</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <img src="https://robots.net/wp-content/uploads/2023/08/how-to-get-started-in-online-gaming-tournaments-1691039868.jpg" class="i5">
+        <h4>Gaming Event | 10 Dec</h4>
+        <p>🎮 Game On, Gamers! 🚀 Level up your weekend—our gaming event is imminent! 📅 Grab your controllers, assemble your squad, and gear up for a gaming extravaganza. 
+            Stay tuned for event details—it's time to show off your skills and have a blast! 🕹️🔥 
+            #GamingAlert #StudentGamers #ReadyPlayerFun 🎮🚀
+        </p>
+        <a href="#" class="ctn">Learn More</a>
+    </div>
+    <div class="col">
+        <img src="https://landing-page-backend.s3.ap-south-1.amazonaws.com/blog_page_prodimages/0a02c08e-41fc-4c69-9645-72c588bb17ab/shutterstock_1199103754-1-1_auto.png" class="i6">
+        <h4>Fashion Show | 12 Dec</h4>
+        <p>👠👗 Strut Alert! 🌟 Fashionistas, mark your calendars! 📅 Our dazzling fashion show is just around the corner. 
+            Prep those runway looks and stay tuned for entry info. It's your moment to shine in style! 💃✨
+             #RunwayReady #StudentFashion #StrikeAPose 👠🌟</p>
+        <a href="#" class="ctn">Learn More</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <img src="https://storage.googleapis.com/pod_public/1300/151757.jpg" class="i7">
+        <h4>Art Contest | 2 Jan</h4>
+        <p>🎨✨ Calling All Artists! 🚀 Unleash your creativity—our art contest is happening soon! 
+            📅 Grab your brushes, pencils, or digital tools, and stay tuned for submission details. 
+            Your masterpiece could steal the spotlight! 🖌️🌟 
+            #ArtisticShowdown #StudentCreativity #BrushUpOnTalent 🎨✨</p>
+        <a href="#" class="ctn">Learn More</a>
+    </div>
+    <div class="col">
+        <img src="https://static.pib.gov.in/WriteReadData/userfiles/image/indiasciencecongress02BU.jpeg" class="i8">
+        <h4>Indian Science Congress | 5 Jan</h4>
+        <p>🔬🌐 Science Enthusiasts, Unite! 🚀 Exciting news—our Indian Science Congress is just around the corner!
+             📅 Save the date for a day filled with groundbreaking research, inspiring talks, and scientific wonders. 
+             Stay tuned for event details—your journey into the world of innovation begins soon! 🌟🔭 
+            #ScienceCongressAlert #StudentScientists #InnovationNation 🔬🚀</p>
+        <a href="#" class="ctn">Learn More</a>
+    </div>
+</div>
+
+</section>
+
+
+    <footer>
+        <p>&copy; 2023 Campus Hub. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
